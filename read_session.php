@@ -1,10 +1,29 @@
 <?php
     session_start();
     //Echo out the sessions:
-    echo "<p> The number of views are: <strong>{$_SESSION['view']}</strong> </p>";
-    echo "<p> The version of my Firefox browser is: <strong>{$_SESSION['browser']}</strong> </p>";
-    echo "<p> The users login access is: <strong>{$_SESSION['role']}</strong> </p>";
+    if (isset($_SESSION['views'])) {
+        if($_SESSION['views'] > 0) {
+            echo "<p>The views are: <strong>{$_SESSION['views']}</strong></p>";
+        }
+    } else {
+        echo "The view is not working";
+    }
 
+    if (isset($_SESSION['browser'])) {
+        if($_SESSION['browser'] = 5) {
+            echo "<p>This is the browser version is: <strong>{$_SESSION['browser']}</strong></p>";
+        }
+    } else {
+        "The browsers version is not version 5";
+    }
+
+    if (isset($_SESSION['role'])) {
+        if($_SESSION['role'] = 'admin') {
+            echo "<p>The role of this user is: <strong>{$_SESSION['role']}</strong></p>";
+        }
+    } else {
+        "The role of the browser is not admin";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +33,7 @@
     <title>Read Session</title>
 </head>
 <body>
-    <p><a href="read_session.php">Read Session</a></p>    
+    <p><a href="create_session.php">Create Session</a></p>    
     <p><a href="destroy_session.php">Destroy Session</a></p>    
     <p><a href="destroy_all_session.php">Destroy all Session</a></p>    
 </body>
