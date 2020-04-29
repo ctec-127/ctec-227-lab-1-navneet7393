@@ -6,7 +6,7 @@
             echo "<p>The views are: <strong>{$_SESSION['views']}</strong></p>";
         }
     } else {
-        echo "The view is not working";
+        echo "The view is not working, Please click on create session";
     }
 
     if (isset($_SESSION['browser'])) {
